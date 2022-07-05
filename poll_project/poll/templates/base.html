@@ -44,12 +44,24 @@
                  profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+
                 <li>
                   <a class="dropdown-item" href="profile">View profile</a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="/logout">Logout</a>
                 </li>
+                {% else %}
+                
+                <li>
+                  <a class="dropdown-item" href="login">Login</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="signup">Signup</a>
+                </li>
+
+                {% endif %}
               </ul>
             </li>
           </ul>

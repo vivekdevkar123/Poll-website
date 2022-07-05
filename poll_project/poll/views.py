@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 
 from .forms import CreatePollForm
 from .models import Poll
-
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
@@ -20,6 +20,7 @@ def index(request):
     return render(request,'index.html',context)
 
 
+@login_required(login_url='login')
 def addpoll(request):
     if request.method == 'POST':
         form = CreatePollForm(request.POST)
@@ -33,6 +34,8 @@ def addpoll(request):
     }
     return render(request,'create.html',context)
 
+
+@login_required(login_url='login')
 def vote(request,poll_id):
     poll = Poll.objects.get(pk=poll_id)
 
@@ -60,7 +63,7 @@ def vote(request,poll_id):
     return render(request,'vote.html',context)
 
 
-
+@login_required(login_url='login')
 def result(request,poll_id):
     poll = Poll.objects.get(pk = poll_id)
     context = {
@@ -104,7 +107,7 @@ def login(request):
     return render(request,'login.html',context)
 
 
-
+@login_required(login_url='login')
 def profile(request):
     context = {
 
@@ -112,7 +115,7 @@ def profile(request):
     return render(request,'profile.html',context)
 
 
-
+@login_required(login_url='login')
 def logoutUser(request):
     logout(request)
     return redirect('login')
