@@ -4,42 +4,5 @@
 
 <center><h1>{{request.user}}</h1></center>
 <center><h1>{{request.user.email}}</h1></center>
-<br><br>
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Available Polls</h3>
-            </div>
-                <br>
-            <ul class="list-group">
-                {% comment %} {% for poll in polls %} {% endcomment %}
-                <li class="list-group-item">
-                    <strong>what is your name</strong>
-                    <span class="pull-right" style="float: right;">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
-                    </span>
-                </li>
-                <li class="list-group-item">
-                    <strong>what is your name</strong>
-                    <span class="pull-right" style="float: right;">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
-                    </span>
-                </li>
-                <li class="list-group-item">
-                    <strong>what is your name</strong>
-                    <span class="pull-right" style="float: right;">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
-                    </span>
-                </li>
-                {% comment %} {% endfor %} {% endcomment %}
-            </ul>
-
-        </div>
-    </div>
-</div>
 
 {% endblock  %}
